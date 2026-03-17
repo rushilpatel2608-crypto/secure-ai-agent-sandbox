@@ -19,3 +19,43 @@ This project provides a secure runtime environment for AI agents using Docker sa
 ---
 
 ## 🏗️ Architecture
+Developer → SSH → VPS
+↓
+Docker Runtime
+↓
+Internal Network (agent-net)
+├── Agent Container
+└── Proxy (Squid)
+↓
+Allowed Internet Access
+---
+
+## ⚠️ Problem
+
+Most AI agent frameworks run with unrestricted system access, which can:
+
+- modify system files
+- abuse APIs
+- expose sensitive data
+- break environments
+
+---
+
+## ✅ Solution
+
+This project provides:
+
+- sandboxed execution
+- controlled networking
+- resource isolation
+- beginner-friendly setup
+
+---
+
+## 🛠️ Setup
+
+```bash
+git clone https://github.com/rushilpatel2608-crypto/secure-ai-agent-sandbox.git
+cd secure-ai-agent-sandbox
+chmod +x run-agent.sh
+./run-agent.sh
